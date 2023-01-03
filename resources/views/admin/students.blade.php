@@ -54,7 +54,7 @@
                   <div class="row ">
                   <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">Student List for Final Year Project 1</h4>
+                    <h4 class="card-title">Student List for Final Year Project</h4>
 
 
                     <div class="table-responsive">

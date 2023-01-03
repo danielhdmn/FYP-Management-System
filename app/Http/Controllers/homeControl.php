@@ -19,14 +19,14 @@ class homeControl extends Controller
         if($typeuser == '1'){
             $student=Student::all();
 
-            return view('admin.students', ['student'=>$student]);
+            return redirect('students');
         }
 
         else{
-            return view('lecturers.lecturerpage');
+            return redirect('studentslist');
         }
 
-        dd(Auth::user());
+        //dd(Auth::user());
 
     }
 

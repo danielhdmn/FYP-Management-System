@@ -55,7 +55,7 @@
 
                   <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">Lecturer List for Final Year Project 1</h4>
+                    <h4 class="card-title">Lecturer List for Final Year Project</h4>
 
                     <div class="table-responsive">
                       <table class="table">
@@ -80,6 +80,41 @@
 
                         </tbody>
                       </table>
+                      
+                      <br>
+                      
+                      <div>
+                        @if ($lecturer->hasPages())
+                        <nav>
+                            <ul class="pagination button-color">
+                                {{-- Previous Page Link --}}
+                                @if ($lecturer->onFirstPage())
+                                    <li class="page-item disabled" aria-disabled="true" style="margin-right: 8px !important;">
+                                        <span class="btn btn-dark">@lang('pagination.previous')</span>
+                                    </li>
+                                @else
+                                    <li class="page-item">
+                                        <a class="btn btn-primary me-2" href="{{ $lecturer->previousPageUrl() }}" rel="prev">@lang('pagination.previous')</a>
+                                    </li>
+                                @endif
+                                
+                                {{-- Next Page Link --}}
+                                @if ($lecturer->hasMorePages())
+                                    <li class="page-item">
+                                        <a class="btn btn-primary me-2" href="{{ $lecturer->nextPageUrl() }}" rel="next">@lang('pagination.next')</a>
+                                    </li>
+                                @else
+                                    <li class="page-item disabled" aria-disabled="true">
+                                        <span class="btn btn-dark">@lang('pagination.next')</span>
+                                    </li>
+                                @endif
+                            </ul>
+                            </nav>
+                        @endif
+                      </div>
+                      
+
+
                     </div>
                   </div>
                 </div>

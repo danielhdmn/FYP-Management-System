@@ -32,10 +32,10 @@
             <!-- partial:partials/_sidebar.html -->
             <!-- partial:partials/_sidebar.html -->
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
-    <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
+    <!-- <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
         <a class="sidebar-brand brand-logo" href="index.html"><img src="/admin/assets/images/logo.svg" alt="logo" /></a>
         <a class="sidebar-brand brand-logo-mini" href="index.html"><img src="/admin/assets/images/logo-mini.svg" alt="logo" /></a>
-      </div>
+      </div> -->
     <ul class="nav">
       
       <li class="nav-item nav-category">
@@ -124,7 +124,7 @@
                           <tr>
                             <th>Start Date</th>
                             <th>End Date</th>
-                            <th>Duration</th>
+                            <th>Duration (Months)</th>
                             <th>Progress</th>
                             <th>Status</th>
                           </tr>
@@ -139,18 +139,34 @@
 
                           <tr>
                             <input type="hidden" name="project_id" value="{{$sv['project_id']}}">
-                            <td> <input type="date" name="start_date"> </td>
-                            <td> <input type="date" name="end_date"> </td>
-                            <td> <input type="text" name="duration"> </td>
-                            <td> <input type="text" name="progress"> </td>
-                            <td> <input type="text" name="status"> </td>
-                          </tr>
+                            <td> <input class="form-control" type="date" name="start_date" value="{{$sv['start_date']}}"> </td>
+                            <td> <input class="form-control" type="date" name="end_date" value="{{$sv['end_date']}}"> </td>
+                            <td> <input class="form-control" type="text" name="duration" value="{{$sv['duration']}}"> </td>
+
+                            <td>
+                              <select class="form-control" id="exampleSelectGender" name="progress" style="color:white !important;">
+                                <option class = "dropdown-name-text-box" {{$sv['progress'] == "Milestone 1"? "selected" : ""}} value="Milestone 1" >Milestone 1</option>
+                                <option class = "dropdown-name-text-box" {{$sv['progress'] == "Milestone 2"? "selected" : ""}} value="Milestone 2" >Milestone 2</option>
+                                <option class = "dropdown-name-text-box" {{$sv['progress'] == "Final Report"? "selected" : ""}} value="Final Report" >Final Report</option>
+                            </td>
+
+                            <td>
+                              <select class="form-control" id="exampleSelectGender" name="status" style="color:white !important;">
+                              <option class = "dropdown-name-text-box" {{$sv['status'] == "On Track"? "selected" : ""}} value="On Track" >On Track</option>
+                              <option class = "dropdown-name-text-box" {{$sv['status'] == "Delayed"? "selected" : ""}} value="Delayed" >Delayed</option>
+                              <option class = "dropdown-name-text-box" {{$sv['status'] == "Extended"? "selected" : ""}} value="Extended" >Extended</option>
+                              <option class = "dropdown-name-text-box" {{$sv['status'] == "Completed"? "selected" : ""}} value="Completed" >Completed</option>
+                            </td>
+
+                            </tr>
 
                         <tr>
+
                         <td>
-                            <button class="btn btn-dark">Cancel</button>
-                            <button type="submit" class="btn btn-primary me-2">Update</button>
+                            <button class="btn btn-dark" style="margin-right: 8px !important;">Cancel</button>
+                            <button type="submit" class="btn btn-primary me-2" >Update Project</button>
                         </td>
+
                         </tr>
                         </form>
                         @endforeach

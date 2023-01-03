@@ -58,58 +58,69 @@
 
 <div class="card">
   <div class="card-body">
-    <h4 class="card-title">Create New FYP Project</h4>
+    <h4 class="card-title">Create New Project</h4>
 
     <form class="forms-sample" action="createproject/" method="POST">
         @csrf
       <div class="form-group">
-        <label for="exampleInputName1">Type</label>
-        <input type="text" class="form-control" id="exampleInputName1" name="type" placeholder="Type">
+        <label for="exampleInputName1">Project Type</label>
+        
+        <select class="form-control dropdown-name-text-box" id="exampleSelectGender" name="type">
+          <option class = "dropdown-name-text-box" value="">Select Project Type</option>
+          <option class = "dropdown-name-text-box" value="Development">Development</option>
+          <option class = "dropdown-name-text-box" value="Research">Research</option>
+        </select>
+
       </div>
 
       <div class="form-group">
-        <label for="exampleInputName1">Title</label>
+        <label for="exampleInputName1">Project Title</label>
         <input type="text" class="form-control" id="exampleInputName1" name="title" placeholder="Project Title">
       </div>
 
       <div class="form-group">
         <label for="exampleSelectGender">Student</label>
-        <select class="form-control" id="exampleSelectGender" name="student_name">
+        <select class="form-control dropdown-name-text-box" id="exampleSelectGender" name="student_name">
+            <option class = "dropdown-name-text-box" value="">Select Student</option>
+
             @foreach($student as $stud)
-                <option value={{$stud['student_id']}}>{{$stud['student_name']}}</option>
+                <option class = "dropdown-name-text-box" value={{$stud['student_id']}}>{{$stud['student_name']}}</option>
             @endforeach
         </select>
       </div>
 
       <div class="form-group">
         <label for="exampleSelectGender">Supervisor</label>
-        <select class="form-control" id="exampleSelectGender" name="supervisor">
+        <select class="form-control dropdown-name-text-box" id="exampleSelectGender" name="supervisor">
+            <option class = "dropdown-name-text-box" value="">Select Supervisor</option>
             @foreach($lecturer as $lect)
-                <option value={{$lect['lecturer_id']}}>{{$lect['lecturer_name']}}</option>
+                <option class = "dropdown-name-text-box" value={{$lect['lecturer_id']}}>{{$lect['lecturer_name']}}</option>
             @endforeach
         </select>
       </div>
 
       <div class="form-group">
         <label for="exampleSelectGender">Examiner 1</label>
-        <select class="form-control" id="exampleSelectGender" name="examiner_1">
+        <select class="form-control dropdown-name-text-box" id="exampleSelectGender" name="examiner_1">
+            <option class = "dropdown-name-text-box" value="">Select Examiner 1</option>
             @foreach($lecturer as $lect)
-                <option value={{$lect['lecturer_id']}}>{{$lect['lecturer_name']}}</option>
+                <option class = "dropdown-name-text-box" value={{$lect['lecturer_id']}}>{{$lect['lecturer_name']}}</option>
             @endforeach
         </select>
       </div>
 
       <div class="form-group">
         <label for="exampleSelectGender">Examiner 2</label>
-        <select class="form-control" id="exampleSelectGender" name="examiner_2">
+        <select class="form-control dropdown-name-text-box" id="exampleSelectGender" name="examiner_2">
+            <option class = "dropdown-name-text-box" value="">Select Examiner 2</option>
             @foreach($lecturer as $lect)
-                <option value={{$lect['lecturer_id']}}>{{$lect['lecturer_name']}}</option>
+                <option class = "dropdown-name-text-box" value={{$lect['lecturer_id']}}>{{$lect['lecturer_name']}}</option>
             @endforeach
         </select>
       </div>
       
+      <button type="reset" class="btn btn-dark">Reset</button>
       <button type="submit" class="btn btn-primary me-2">Submit</button>
-      <button class="btn btn-dark">Cancel</button>
     </form>
 
   </div>

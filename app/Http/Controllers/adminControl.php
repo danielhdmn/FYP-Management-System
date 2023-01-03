@@ -19,19 +19,22 @@ class adminControl extends Controller
     }
 
     function displayLecturer(){
-        $data=Lecturer::all();
+        $data=Lecturer::paginate(5);
 
         return view('admin.lecturers', ['lecturer'=>$data]);
     }
 
     function create(){
-        $studentList=Student::all();
+        $studentList=Project::select('student_id')->get()->toArray();
+        $studentList=Student::whereNotIn('student_id', $studentList)->get();
+
         $lecturerList=Lecturer::all();
 
         return view('admin.create', [
             'student'=>$studentList, 
             'lecturer'=>$lecturerList, 
         ]);
+
     }
 
     function createProject(Request $req){

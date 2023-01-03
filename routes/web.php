@@ -52,9 +52,9 @@ Route::post('/updateSV', [lecturerControl::class, 'updateSV']);
 
 // Route for Testing Phase
 
-Route::view('/test', 'test');
+//Route::view('/test', 'test');
 
-Route::view('/project', 'project');
+//Route::view('/project', 'project');
 
 Route::get('/redirect', [homeControl::class, 'redirectFunct']);
 

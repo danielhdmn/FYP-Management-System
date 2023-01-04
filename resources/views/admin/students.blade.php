@@ -62,7 +62,6 @@
                         <thead>
                           <tr>
                             <th>Name</th>
-                            <th>Student ID</th>
                             <th>Email</th>
                             <th>Subject Code</th>
                           </tr>
@@ -73,7 +72,6 @@
                         
                           <tr>
                             <td>{{$stud['student_name']}}</td>
-                            <td>{{$stud['student_id']}}</td>
                             <td>{{$stud['email']}}</td>
                             <td>{{$stud['subject']}}</td>
                           </tr>

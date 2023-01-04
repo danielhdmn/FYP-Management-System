@@ -45,6 +45,7 @@ class lecturerControl extends Controller
         $lecturer_id=Auth::user()->id;
 
         $data=Project::where('supervisor', '=' , $lecturer_id)->get();
+
         $student=Student::all();
         $project=Project::all();
 

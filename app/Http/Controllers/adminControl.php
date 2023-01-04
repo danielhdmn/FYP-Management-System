@@ -19,7 +19,7 @@ class adminControl extends Controller
     }
 
     function displayLecturer(){
-        $data=Lecturer::paginate(5);
+        $data=Lecturer::all();
 
         return view('admin.lecturers', ['lecturer'=>$data]);
     }

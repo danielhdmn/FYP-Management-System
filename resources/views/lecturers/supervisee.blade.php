@@ -79,8 +79,10 @@
                           @endforeach
                           </form>
                         </tbody>
-
                       </table>
+
+                      <br>
+
                     </div>
                   </div>
                   <br>

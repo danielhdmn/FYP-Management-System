@@ -110,9 +110,9 @@ https://templatemo.com/tm-558-klassy-cafe
                     <div class="left-content">
                         <div class="inner-content">
                             <h4>FYP4U</h4>
-                            <h6>Building the Next AI</h6>
+                            <h6>Building the Next Project</h6>
                             <div class="main-white-button scroll-to-section">
-                                <a href="{{ route('login') }}">Reserve Project Now</a>
+                                <a href="{{ route('login') }}">More Project</a>
                             </div>
                         </div>
                     </div>
